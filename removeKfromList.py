@@ -18,3 +18,24 @@ def removeKFromList(l, k):
 
 
 # second solution
+# advance the head node until the value isnt k and then check next values
+# if next node val is k, remove it from LL, keep curr
+# else, advance curr node
+
+def removeKFromList(l, k):
+    while l and l.value == k:
+        l = l.next
+        
+    if l == None:
+        return l
+    
+    curr = l
+    
+    while curr.next:
+        if curr.next.value == k:
+            curr.next = curr.next.next
+        else:
+            curr = curr.next
+        
+        
+    return l
