@@ -5,6 +5,7 @@
 
 def sumInRange(nums, queries):
 #   modify the list so it reflects the running sum
+#   O(n) time to build
     
     for i, v in enumerate(nums):
         if i == 0:
@@ -13,6 +14,10 @@ def sumInRange(nums, queries):
         nums[i] = nums[i-1] + v
         
     result = 0
+
+    # since nums is now the running sum, can use slices to get the query
+    # if start of query is 0, then index into the sums at the second index
+    # else minus the sum previous to the second query index from the first query index
     
     for query in queries:
         if query[0] == 0:
