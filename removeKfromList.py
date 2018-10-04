@@ -1,3 +1,5 @@
+# Given a Linked List, remove nodes that have the value k.
+
 def removeKFromList(l, k):
     
     curr = l
